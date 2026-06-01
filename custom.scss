@@ -1,0 +1,62 @@
+/*-- scss:defaults --*/
+$font-family-sans-serif: "Source Sans Pro", "Helvetica Neue", sans-serif;
+$presentation-heading-font: "Source Sans Pro", "Helvetica Neue", sans-serif;
+$presentation-heading-color: #2d3748;
+$link-color: #4f46e5;
+$body-color: #2d3748;
+$code-color: #4f46e5;
+
+/*-- scss:rules --*/
+
+/* Section title slides */
+.section-slide h2 {
+  font-size: 2em;
+  color: white;
+}
+
+/* Comparison table */
+.comparison table {
+  font-size: 0.75em;
+  width: 100%;
+}
+.comparison th {
+  background: #4f46e5;
+  color: white;
+  padding: 0.4em 0.8em;
+}
+.comparison td {
+  padding: 0.3em 0.8em;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+/* File tree styling */
+.filetree {
+  font-family: monospace;
+  font-size: 0.8em;
+  background: #f7fafc;
+  padding: 1em;
+  border-radius: 6px;
+  border-left: 3px solid #4f46e5;
+}
+.filetree .edit {
+  color: #4f46e5;
+  font-weight: bold;
+}
+
+/* Step boxes */
+.step {
+  background: #eef2ff;
+  border-radius: 8px;
+  padding: 0.5em 1em;
+  margin: 0.3em 0;
+  border-left: 4px solid #4f46e5;
+}
+
+.reveal .slide-number {
+  font-size: 0.5em;
+}
+
+/* Smaller bullets */
+.reveal ul {
+  font-size: 0.9em;
+}

@@ -1,0 +1,17 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Academic Website Workshop"
+
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    progress: true
+    history: true
+    code-line-numbers: false
+    highlight-style: github
+    footer: "Academic Website Workshop · hackingcommsci.org"
+    logo: logo.png
