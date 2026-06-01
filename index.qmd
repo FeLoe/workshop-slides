@@ -161,7 +161,7 @@ The website feature uses the same `.qmd` files — **no new tool to learn**.
 ::: {.column width="45%"}
 A `.qmd` file looks like this:
 
-```markdown
+```default
 ---
 title: "My Paper"
 format: html
@@ -235,7 +235,7 @@ After ~2 minutes, your site is live at
 
 Open `index.qmd` and replace the placeholder text:
 
-```yaml
+```default
 ---
 title: "Your Name"
 about:
@@ -262,7 +262,7 @@ Commit → push → site updates in ~60 seconds.
 
 Open `publications.qmd` and paste:
 
-```markdown
+```default
 **Your Name, & Co-Author (2024).** Paper title.
 *Journal Name*, 10(2), 100–120.
 [[DOI]](https://doi.org/10.xxx/xxx)
