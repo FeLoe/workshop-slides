@@ -33,20 +33,56 @@ Ask the room: how many of you have a personal website? How many have had someone
 
 | Time | What |
 |------|------|
-| 5 min | What you'll build + two pathways |
-| 5 min | What you need to prepare |
+| 5 min | Two pathways + what you'll build |
+| 5 min | Installation check |
 | 20 min | Live demo |
 | 25 min | Hands-on: your own content |
 | 5 min | Wrap up & questions |
 
 ::: {.callout-tip}
 ## Before we start
-You need a **GitHub account** — create one at [github.com](https://github.com) if you don't have one yet.
+Create a free **GitHub account** at [github.com](https://github.com) if you don't have one.
 :::
 
-::: notes
-This is a fast-paced workshop. The goal is that everyone leaves with a working URL. Perfecting content comes later.
+---
+
+## Installation {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Both paths need:**
+
+:::{.step}
+**Git** — check: `git --version`
+install: [git-scm.com](https://git-scm.com)
 :::
+:::{.step}
+**VS Code** (recommended editor)
+[code.visualstudio.com](https://code.visualstudio.com)
+:::
+:::{.step}
+**GitHub account** — [github.com](https://github.com)
+:::
+:::
+::: {.column width="50%"}
+**Path A (Quarto) also needs:**
+:::{.step}
+**Quarto** — [quarto.org](https://quarto.org) → Get Started
+check: `quarto --version`
+:::
+
+**Path B (Hugo) also needs:**
+:::{.step}
+**Hugo** (extended) — check: `hugo version`
+Mac: `brew install hugo`
+Windows: [github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
+:::
+:::{.step}
+**Go** — check: `go version`
+Mac: `brew install go` · [go.dev/dl](https://go.dev/dl)
+:::
+:::
+::::
 
 ---
 
@@ -71,7 +107,7 @@ This is a fast-paced workshop. The goal is that everyone leaves with a working U
 
 ---
 
-## Two pathways {background-color="#1e293b"}
+## Two pathways {background-color="#1e293b" .smaller}
 
 ::: {.columns}
 ::: {.column width="48%"}
@@ -97,20 +133,15 @@ This is a fast-paced workshop. The goal is that everyone leaves with a working U
 :::
 :::
 
-::: {.callout-note}
-## Same workflow, different tools
 Both use: **edit a file → commit → push → site updates automatically**
-:::
 
 ---
 
 ## What to prepare {.smaller}
 
-Get these ready before the hands-on section:
-
 ::: {.columns}
 ::: {.column width="50%"}
-**Essential (5 minutes)**
+**Essential**
 
 - Profile photo (any jpg/png)
 - 2–3 sentence bio
@@ -129,10 +160,8 @@ Get these ready before the hands-on section:
 :::
 :::{.step}
 ✓ **Netlify** account (Hugo path only)
+sign up free with your GitHub account
 :::
-
-Both are free. Sign up with your GitHub account.
-
 :::
 :::
 
@@ -212,7 +241,7 @@ my-website/
 
 `cv.qmd` — CV page
 
-*Everything else is automatic. The `.github/` folder you never touch.*
+*The `.github/` folder you never touch.*
 :::
 ::::
 
@@ -249,9 +278,11 @@ After ~2 minutes, your site is live at
 
 ---
 
-## Step 2: Edit your bio
+## Step 2: Edit your bio {.smaller}
 
-Open `index.qmd` and replace the placeholder text:
+:::: {.columns}
+::: {.column width="55%"}
+Open `index.qmd` and replace the placeholders:
 
 ```default
 ---
@@ -261,24 +292,35 @@ about:
   image: profile.png
   links:
     - icon: envelope
-      text: Email
-      href: mailto:you@university.edu
+      href: mailto:you@uni.edu
     - icon: github
-      text: GitHub
-      href: https://github.com/yourhandle
+      href: https://github.com/you
 ---
 
-I am an assistant professor of X at Y University.
+I am an assistant professor of X at Y.
 My research focuses on...
 ```
+:::
+::: {.column width="45%"}
+**Key things to change:**
 
-Commit → push → site updates in ~60 seconds.
+`title:` → your full name
+
+`image:` → your photo filename
+
+`links:` → your email, Twitter, GitHub, Scholar
+
+The text below `---` → your bio
+
+*Then drop your photo into the folder with the same filename.*
+:::
+::::
 
 ---
 
-## Step 3: Add a publication
+## Step 3: Add a publication {.smaller}
 
-Open `publications.qmd` and paste:
+Open `publications.qmd` and paste one block per paper:
 
 ```default
 **Your Name, & Co-Author (2024).** Paper title.
@@ -293,9 +335,7 @@ Paste your abstract here. Click to expand.
 ---
 ```
 
-::: {.callout-tip}
-Copy-paste one block per paper. No special syntax needed.
-:::
+Copy-paste one block per paper. No special syntax, no YAML — just text.
 
 ---
 
@@ -309,7 +349,7 @@ flowchart LR
   D --> E[Live at\nyourusername.github.io]
 ```
 
-**Once set up, the only command you ever run is:**
+**The only commands you ever run:**
 ```bash
 git add .
 git commit -m "added new paper"
@@ -380,10 +420,9 @@ my-website/
 
 `publication/*/index.md` — one per paper
 
-*Rule of thumb: only touch files inside `content/` and `config/`.*
+*Only ever touch files inside `content/` and `config/`.*
 :::
 ::::
-
 
 ---
 
@@ -404,7 +443,7 @@ my-website/
 Netlify detects Hugo automatically.
 Your site is live at `yourname.netlify.app`.
 
-*(You can set a custom domain later)*
+*(Custom domain: set it later for free)*
 :::
 ::: {.column width="45%"}
 ![](img-netlify-deploy.png){width=380px}
@@ -413,8 +452,10 @@ Your site is live at `yourname.netlify.app`.
 
 ---
 
-## Step 2: Edit your profile
+## Step 2: Edit your profile {.smaller}
 
+:::: {.columns}
+::: {.column width="55%"}
 Open `content/authors/admin/_index.md`:
 
 ```yaml
@@ -426,25 +467,37 @@ organizations:
     url: https://university.edu
 
 interests:
-  - Computational methods
+  - Topic one
   - Topic two
 
 social:
   - icon: envelope
     icon_pack: fas
     link: "mailto:you@university.edu"
-  - icon: twitter
-    icon_pack: fab
-    link: https://twitter.com/yourhandle
 ```
+:::
+::: {.column width="45%"}
+**Key things to change:**
 
-Add `avatar.jpg` to the same folder for your photo.
+`title:` → your name
+
+`role:` → your position
+
+`organizations:` → your institution
+
+`interests:` → your research topics
+
+`social:` → your links
+
+*Add `avatar.jpg` in the same folder for your photo.*
+:::
+::::
 
 ---
 
-## Step 3: Add a publication
+## Step 3: Add a publication {.smaller}
 
-Copy the folder `content/publication/my-first-paper/`, rename it, edit `index.md`:
+Copy `content/publication/my-first-paper/`, rename it, edit `index.md`:
 
 ```yaml
 title: "Your Paper Title"
@@ -453,14 +506,12 @@ date: "2024-01-01"
 publication: "*Journal Name*"
 doi: "10.xxxx/xxxxx"
 publication_types: ["2"]   # 2 = journal article
-
 abstract: >
   Paste your abstract here.
-
 tags: [your topic, methods]
 ```
 
-Add `featured.png` to the folder → image appears on the homepage card.
+Add `featured.png` to the folder → image card appears on the homepage.
 
 ---
 
@@ -469,9 +520,8 @@ Add `featured.png` to the folder → image appears on the homepage card.
 |  | Quarto + GitHub Pages | Hugo Blox + Netlify |
 |--|--|--|
 | **Setup time** | ~15 min | ~20 min |
-| **Files to edit** | 4 plain markdown files | YAML config + content folders |
 | **Adding a paper** | Paste text in one file | Copy folder, edit YAML |
-| **Publication pages** | Manual (abstract in `<details>`) | Auto-generated with links, citation |
+| **Publication pages** | Manual (`<details>` abstract) | Auto-generated |
 | **Looks like** | Clean, minimal | Feature-rich, academic |
 | **Best for** | R/Python users | Anyone wanting more polish |
 | **Hosting** | GitHub Pages (free) | Netlify (free) |
@@ -481,36 +531,33 @@ Add `featured.png` to the folder → image appears on the homepage card.
 
 ## The update workflow {.smaller}
 
-**Both paths work exactly the same way after setup:**
+**Both paths — same commands every time:**
 
 ::: {.columns}
 ::: {.column width="50%"}
-**Add a new paper:**
+**Add a new paper**
 
 1. Edit your file / add a folder
 2. `git add .`
 3. `git commit -m "added paper"`
 4. `git push`
-5. Wait ~60 seconds
 
-**Your site is updated.**
+↓ site updates in ~60 seconds
 :::
 ::: {.column width="50%"}
-**Change your job title:**
+**Change your job title**
 
 1. Edit one line in one file
 2. `git add .`
 3. `git commit -m "updated title"`
 4. `git push`
-5. Done
 
-**No CMS, no login, no clicking around.**
+↓ done. No CMS, no login.
 :::
 :::
 
 ::: {.callout-tip}
-## Pro tip
-Write yourself a note: "website = edit file + git push". That's all you'll ever need to remember.
+"website = edit file + git push" — that's all you need to remember.
 :::
 
 ---
@@ -526,13 +573,10 @@ Write yourself a note: "website = edit file + git push". That's all you'll ever 
 
 **Goal for the next 25 minutes:**
 
-1. Fork the template
-2. Replace the placeholder bio with yours
-3. Add at least one real publication
-4. Get a working URL
+1. Fork the template · 2. Add your bio · 3. Add one real paper · 4. Get a URL
 
 ::: notes
-Walk around and help people. The most common issue is GitHub Pages not being enabled — check Settings → Pages.
+Walk around and help people. Most common issue: GitHub Pages not enabled — Settings → Pages.
 :::
 
 ---
@@ -543,17 +587,17 @@ Walk around and help people. The most common issue is GitHub Pages not being ena
 ::: {.column width="50%"}
 **Quarto checklist**
 
-- [ ] GitHub Pages set to "GitHub Actions" in Settings
+- [ ] GitHub Pages → "GitHub Actions" in Settings?
 - [ ] Did the Action run? (check Actions tab)
-- [ ] Is your profile photo named `profile.png`?
+- [ ] Photo named exactly `profile.png`?
 - [ ] Did you push after committing?
 :::
 ::: {.column width="50%"}
 **Hugo checklist**
 
-- [ ] Connected to Netlify? (check app.netlify.com)
-- [ ] Did the build succeed? (check Deploys tab)
-- [ ] Is your photo named `avatar.jpg` or `avatar.png`?
+- [ ] Repo connected to Netlify?
+- [ ] Build succeeded? (Netlify Deploys tab)
+- [ ] Photo named `avatar.jpg` or `avatar.png`?
 - [ ] Did you push after committing?
 :::
 :::
@@ -569,16 +613,13 @@ Walk around and help people. The most common issue is GitHub Pages not being ena
 **After the workshop:**
 
 - Add all your publications
-- Write a proper bio
-- Add your CV (`cv.qmd` / `content/cv.md`)
-- Set a custom domain (optional, ~€10/year)
-  - Namecheap, Hover, Google Domains
-  - Both GitHub Pages and Netlify support it for free
+- Write a proper bio and update your photo
+- Set a custom domain (~€10/year, works with both hosts)
 
 **Keep it maintained:**
 
-- Set a reminder every 6 months to update papers
-- Every new paper = 10 minutes to add it
+- Set a 6-month reminder to update papers
+- New paper = 10 minutes to add it
 :::
 ::: {.column width="45%"}
 **Resources:**
@@ -592,7 +633,7 @@ Hugo Blox docs:
 These slides:
 [github.com/FeLoe/workshop-slides](https://github.com/FeLoe/workshop-slides)
 
-Questions after the workshop:
+Questions after:
 [f.loecherbach@uva.nl](mailto:f.loecherbach@uva.nl)
 :::
 :::
@@ -609,7 +650,7 @@ Questions after the workshop:
 - How to add publications, a CV, and a bio
 - How to deploy with one `git push`
 
-**Your site should be live by now. Share the URL!**
+**Your site should be live. Share the URL!**
 :::
 ::: {.column width="40%"}
 ![](mascot.png){width=260px fig-align="center"}
