@@ -6,7 +6,7 @@ date: today
 format: revealjs
 ---
 
-## Why bother? {background-color="#4f46e5"}
+## Why bother? {background-color="#1e293b"}
 
 ::: {.columns}
 ::: {.column width="60%"}
@@ -138,7 +138,7 @@ Both are free. Sign up with your GitHub account.
 
 ---
 
-## Path A: Quarto {background-color="#4f46e5"}
+## Path A: Quarto {background-color="#1e293b"}
 
 ### GitHub Pages
 
@@ -182,21 +182,39 @@ Show of hands: who has used R Markdown or Quarto before?
 
 ---
 
-## Quarto file structure {.smaller}
+## Quarto file structure
 
-::: {.filetree}
+:::: {.columns}
+::: {.column width="42%"}
+```bash
 my-website/
-├── **_quarto.yml** &nbsp;&nbsp;&nbsp; ← site title, theme, navbar
-├── **index.qmd** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← your bio + photo + links
-├── **publications.qmd** ← your papers list
-├── **talks.qmd** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← presentations
-├── **cv.qmd** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← CV as a web page
-├── profile.png &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← your photo
-└── .github/workflows/
-&nbsp;&nbsp;&nbsp;&nbsp;└── publish.yml &nbsp; ← auto-deploy (don't touch)
+├── _quarto.yml
+├── index.qmd
+├── publications.qmd
+├── talks.qmd
+├── cv.qmd
+├── profile.png
+└── .github/
+    └── workflows/
+        └── publish.yml
+```
 :::
+::: {.column width="58%"}
+**Five files you edit:**
 
-**That's it. Five files you edit. Everything else is automatic.**
+`_quarto.yml` — site title, theme, navbar
+
+`index.qmd` — bio, photo, social links
+
+`publications.qmd` — papers list
+
+`talks.qmd` — presentations
+
+`cv.qmd` — CV page
+
+*Everything else is automatic. The `.github/` folder you never touch.*
+:::
+::::
 
 ::: notes
 Point out: no theme files, no layout files, no HTML. Just markdown.
@@ -332,24 +350,40 @@ This is what felicialoecherbach.com runs on — you can show your own site here.
 
 ---
 
-## Hugo Blox file structure {.smaller}
+## Hugo Blox file structure
 
-::: {.filetree}
+:::: {.columns}
+::: {.column width="42%"}
+```bash
 my-website/
 ├── config/_default/
-│&nbsp;&nbsp;&nbsp; ├── **config.yaml** &nbsp; ← site title, URL, nav
-│&nbsp;&nbsp;&nbsp; └── **params.yaml** &nbsp; ← theme colour, contact
+│   ├── config.yaml
+│   └── params.yaml
 ├── content/
-│&nbsp;&nbsp;&nbsp; ├── authors/admin/
-│&nbsp;&nbsp;&nbsp; │&nbsp;&nbsp;&nbsp; └── **_index.md** &nbsp; ← bio, photo, links
-│&nbsp;&nbsp;&nbsp; ├── home/ &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← toggle sections
-│&nbsp;&nbsp;&nbsp; └── publication/
-│&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; └── **my-paper/** &nbsp; ← one folder per paper
-│&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp; └── index.md
-└── netlify.toml &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; ← hosting config
+│   ├── authors/admin/
+│   │   └── _index.md
+│   ├── home/
+│   └── publication/
+│       └── my-paper/
+│           └── index.md
+└── netlify.toml
+```
 :::
+::: {.column width="58%"}
+**Files you edit:**
 
-**Rule of thumb: only edit files inside `content/` and `config/`.**
+`config.yaml` — site title, URL, navbar
+
+`params.yaml` — theme colour, contact
+
+`_index.md` — bio, photo, social links
+
+`publication/*/index.md` — one per paper
+
+*Rule of thumb: only touch files inside `content/` and `config/`.*
+:::
+::::
+
 
 ---
 
@@ -481,7 +515,7 @@ Write yourself a note: "website = edit file + git push". That's all you'll ever 
 
 ---
 
-## Hands-on time! {background-color="#4f46e5"}
+## Hands-on time! {background-color="#1e293b"}
 
 ### Pick your path and get your site live
 
@@ -565,7 +599,7 @@ Questions after the workshop:
 
 ---
 
-## Thank you! {background-color="#4f46e5"}
+## Thank you! {background-color="#1e293b"}
 
 ::: {.columns}
 ::: {.column width="60%"}
