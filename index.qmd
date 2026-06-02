@@ -244,8 +244,6 @@ Point out: no theme files, no layout files, no HTML. Just markdown.
 
 ## Step 1: Fork the template
 
-::: {.columns}
-::: {.column width="55%"}
 :::{.step}
 **1.** Go to the template repo on GitHub
 :::
@@ -261,11 +259,6 @@ Point out: no theme files, no layout files, no HTML. Just markdown.
 
 After ~2 minutes, your site is live at
 `https://yourusername.github.io/my-website`
-:::
-::: {.column width="45%"}
-![](img-github-template.png){width=380px}
-:::
-:::
 
 ---
 
@@ -647,3 +640,93 @@ Questions after:
 ![](mascot.png){width=260px fig-align="center"}
 :::
 :::
+
+---
+
+## Bonus: Custom domains {background-color="#1e293b"}
+
+### `yourname.com` instead of `username.github.io`
+
+---
+
+## Getting a domain {.smaller}
+
+:::: {.columns}
+::: {.column width="55%"}
+**Where to buy** — ~€10–15/year
+
+:::{.step}
+Go to a domain registrar and search for your name
+:::
+
+Popular registrars:
+
+- [Namecheap](https://namecheap.com) — transparent pricing, no dark patterns
+- [Porkbun](https://porkbun.com) — cheap, friendly UI
+- [Squarespace Domains](https://domains.squarespace.com) — formerly Google Domains
+
+**What to register:** `firstnamelastname.com` or `.io`
+
+::: {.callout-tip}
+Stick with `.com` — it's still the most recognisable extension for a personal academic site.
+:::
+:::
+::: {.column width="45%"}
+**Once you have a domain:**
+
+Your registrar gives you a **DNS control panel** — this is where you point the domain to your site.
+
+The next steps depend on which host you use (GitHub Pages vs Netlify).
+:::
+::::
+
+---
+
+## Connecting your domain {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**Quarto → GitHub Pages**
+
+:::{.step}
+**1.** In your repo: Settings → Pages → **Custom domain** → enter `yourname.com`
+:::
+:::{.step}
+**2.** In your registrar DNS panel, add four **A records** pointing to GitHub:
+```
+185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+```
+:::
+:::{.step}
+**3.** Add a **CNAME record**: `www` → `yourusername.github.io`
+:::
+:::{.step}
+**4.** Back in GitHub Pages settings: tick **Enforce HTTPS**
+:::
+
+*DNS takes up to 48 hours to propagate.*
+:::
+::: {.column width="50%"}
+**Hugo → Netlify** *(simpler)*
+
+:::{.step}
+**1.** In Netlify: Site settings → **Domain management** → Add custom domain
+:::
+:::{.step}
+**2.** Netlify shows you 4 nameservers — copy them
+:::
+:::{.step}
+**3.** In your registrar: replace the default nameservers with Netlify's
+:::
+:::{.step}
+**4.** Done — Netlify handles DNS and issues a free HTTPS certificate automatically
+:::
+
+::: {.callout-tip}
+Netlify's nameserver approach is the easiest option for both paths if your registrar supports it.
+:::
+:::
+::::
