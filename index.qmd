@@ -52,35 +52,26 @@ Create a free **GitHub account** at [github.com](https://github.com) if you don'
 ::: {.column width="50%"}
 **Both paths need:**
 
-:::{.step}
-**Git** — check: `git --version`
-install: [git-scm.com](https://git-scm.com)
-:::
-:::{.step}
-**VS Code** (recommended editor)
-[code.visualstudio.com](https://code.visualstudio.com)
-:::
-:::{.step}
-**GitHub account** — [github.com](https://github.com)
-:::
+- **Git** · check: `git --version` · install: [git-scm.com](https://git-scm.com)
+- **VS Code** · [code.visualstudio.com](https://code.visualstudio.com)
+- **GitHub account** · [github.com](https://github.com)
+
+**Path A — also install Quarto:**
+
+- check: `quarto --version`
+- install: [quarto.org](https://quarto.org) → Get Started
 :::
 ::: {.column width="50%"}
-**Path A (Quarto) also needs:**
-:::{.step}
-**Quarto** — [quarto.org](https://quarto.org) → Get Started
-check: `quarto --version`
-:::
+**Path B — also install Hugo + Go:**
 
-**Path B (Hugo) also needs:**
-:::{.step}
-**Hugo** (extended) — check: `hugo version`
-Mac: `brew install hugo`
-Windows: [github.com/gohugoio/hugo/releases](https://github.com/gohugoio/hugo/releases)
-:::
-:::{.step}
-**Go** — check: `go version`
-Mac: `brew install go` · [go.dev/dl](https://go.dev/dl)
-:::
+- `hugo version` · Mac: `brew install hugo`
+  · Windows: [gohugo.io/installation](https://gohugo.io/installation)
+- `go version` · Mac: `brew install go`
+  · [go.dev/dl](https://go.dev/dl)
+
+**Also need a Netlify account (free):**
+
+- Sign up at [netlify.com](https://netlify.com) with your GitHub account
 :::
 ::::
 
