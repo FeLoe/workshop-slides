@@ -64,10 +64,10 @@ Create a free **GitHub account** at [github.com](https://github.com) if you don'
 ::: {.column width="50%"}
 **Path B — also install Hugo + Go:**
 
-- `hugo version` · Mac: `brew install hugo`
-  · Windows: [gohugo.io/installation](https://gohugo.io/installation)
-- `go version` · Mac: `brew install go`
-  · [go.dev/dl](https://go.dev/dl)
+- `hugo version` → [gohugo.io/installation](https://gohugo.io/installation)
+  (download the **extended** binary for your OS)
+- `go version` → [go.dev/dl](https://go.dev/dl)
+  (download the `.pkg` installer for Mac, `.msi` for Windows)
 
 **Also need a Netlify account (free):**
 
