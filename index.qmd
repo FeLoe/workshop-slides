@@ -342,6 +342,27 @@ git push
 
 ---
 
+## Preview locally — Quarto {.smaller}
+
+Run this in the terminal from your project folder:
+
+```bash
+quarto preview
+```
+
+Opens at `http://localhost:4321` and **refreshes automatically** as you save files.
+
+**What you need installed:**
+
+- [Quarto](https://quarto.org/docs/get-started/) — same installer you used for setup
+
+::: {.callout-tip}
+Working directly on GitHub without a local install? Just push — the Action builds for you.
+You only need local preview if you want to check changes before committing.
+:::
+
+---
+
 ## Path B: Hugo Blox {background-color="#0f172a"}
 
 ### Netlify
@@ -496,6 +517,28 @@ tags: [your topic, methods]
 ```
 
 Add `featured.png` to the folder → image card appears on the homepage.
+
+---
+
+## Preview locally — Hugo {.smaller}
+
+Run this in the terminal from your project folder:
+
+```bash
+hugo server
+```
+
+Opens at `http://localhost:1313` and **refreshes automatically** as you save files.
+
+**What you need installed:**
+
+- [Hugo](https://gohugo.io/installation/) (extended version)
+- [Go](https://go.dev/dl/) — required for Hugo modules
+
+::: {.callout-tip}
+No local install? Just push to GitHub — Netlify builds and deploys automatically.
+Local preview is useful when you're making bigger changes and want to check before pushing.
+:::
 
 ---
 
