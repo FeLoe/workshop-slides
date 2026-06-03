@@ -257,7 +257,7 @@ Point out: no theme files, no layout files, no HTML. Just markdown.
 **4.** Settings → Pages → Source: **GitHub Actions**
 :::
 
-After ~2 minutes, your site is live at
+After your first push, your site will be live at
 `https://yourusername.github.io/my-website`
 
 ---
