@@ -329,8 +329,8 @@ Copy-paste one block per paper. No special syntax, no YAML — just text.
 flowchart LR
   A[Edit file] --> B[git commit]
   B --> C[git push]
-  C --> D[GitHub Actions\nbuilds site]
-  D --> E[Live at\nyourusername.github.io]
+  C --> D[GitHub Actions]
+  D --> E[Site is live]
 ```
 
 **The only commands you ever run:**
