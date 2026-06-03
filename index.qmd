@@ -448,7 +448,7 @@ my-website/
 Netlify detects Hugo automatically.
 Your site is live at `yourname.netlify.app`.
 
-*(Custom domain: set it later for free)*
+*(Custom domain: ~€10/year — see bonus slides at the end)*
 :::
 ::: {.column width="45%"}
 ![](img-netlify-deploy.png){width=380px}
