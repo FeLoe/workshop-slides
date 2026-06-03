@@ -616,6 +616,7 @@ Walk around and help people. Most common issue: GitHub Pages not enabled — Set
 
 - [ ] GitHub Pages → "GitHub Actions" in Settings?
 - [ ] Did the Action run? (check Actions tab)
+- [ ] Action failed on first push? Wait — it retries automatically, or push again
 - [ ] Photo named exactly `profile.png`?
 - [ ] Did you push after committing?
 :::
